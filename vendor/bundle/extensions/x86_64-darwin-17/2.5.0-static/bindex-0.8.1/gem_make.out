@@ -1,0 +1,15 @@
+current directory: /Users/akiyamadaiki/workspace_jobtest/takuro/takuro_app/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+/Users/akiyamadaiki/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20190914-3766-4aqwdo.rb extconf.rb
+creating Makefile
+
+current directory: /Users/akiyamadaiki/workspace_jobtest/takuro/takuro_app/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/akiyamadaiki/workspace_jobtest/takuro/takuro_app/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/akiyamadaiki/workspace_jobtest/takuro/takuro_app/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20190914-3766-1fyho5q/skiptrace/internal

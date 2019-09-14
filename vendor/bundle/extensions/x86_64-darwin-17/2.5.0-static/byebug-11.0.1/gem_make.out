@@ -1,0 +1,19 @@
+current directory: /Users/akiyamadaiki/workspace_jobtest/takuro/takuro_app/vendor/bundle/gems/byebug-11.0.1/ext/byebug
+/Users/akiyamadaiki/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20190914-3766-71x6r7.rb extconf.rb
+creating Makefile
+
+current directory: /Users/akiyamadaiki/workspace_jobtest/takuro/takuro_app/vendor/bundle/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/akiyamadaiki/workspace_jobtest/takuro/takuro_app/vendor/bundle/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/akiyamadaiki/workspace_jobtest/takuro/takuro_app/vendor/bundle/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20190914-3766-1qw51s4/byebug
