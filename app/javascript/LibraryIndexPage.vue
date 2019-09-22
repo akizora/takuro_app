@@ -15,13 +15,11 @@
             <th>name</th>
             <th>address</th>
             <th>category</th>
-            <!-- <th>url</th> -->
           </tr>
           <tr v-for="library in libraries" :key="library.city">
             <td><router-link :to="{ name: 'LibraryDetailPage', params: { id: library.id } }">{{ library.formal }}</router-link></td>
             <td>{{ library.address }}</td>
             <td>{{ library.category }}</td>
-            <!-- <td>{{ e.url_pc }}</td> -->
           </tr>
         </tbody>
       </table>
@@ -52,7 +50,7 @@ export default {
       }
     },
     mounted () {
-      this.updateLibraries();
+      this.showLibraries();
     },
     methods: {
     deleteEmployee: function() {
@@ -74,11 +72,16 @@ export default {
           }
         });
     },
-    updateLibraries: function() {
-      axios
-        // .get('/api/v1/libraries.json')
-        .get(`/api/v1/libraries/${this.$route.params.name}.json`)
-        .then(response => (this.libraries = response.data))
+    showLibraries: function() {
+      if (this.$route.params.city) {
+        axios
+          .post(`/api/v1/libraries/city/${this.$route.params.city}.json`)
+          .then(response => (this.libraries = response.data))
+      } else {
+        axios
+          .post(`/api/v1/libraries/category/${this.$route.params.category}.json`)
+          .then(response => (this.libraries = response.data))
+      }
     }
   }
 }

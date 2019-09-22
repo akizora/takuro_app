@@ -53,7 +53,7 @@ export default {
   },
   mounted () {
     axios
-      .get(`/api/v1/libraries/${this.$route.params.name}/${this.$route.params.id}.json`)
+      .get(`/api/v1/libraries/${this.$route.params.id}.json`)
       .then(response => (this.library = response.data))
   }
 }

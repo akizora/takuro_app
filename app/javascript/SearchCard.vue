@@ -4,13 +4,14 @@
             <h2>図書館検索</h2>
             <h3>人気エリアから探す</h3>
             <a v-for="city in cities" :key="city.name" >
-                <router-link :to="{ name: 'LibraryIndexPage', params: { name: city.name } }">{{ city.name }}
+                <router-link :to="{ name: 'LibraryIndexPageFromCity', params: { city: city.name } }">{{ city.name }}
                 </router-link>
             </a>
-            <!-- <h3>カテゴリーから探す</h3>
-            <a>専門</a>
-            <a>大学</a>
-            <a>図書館</a> -->
+            <h3>カテゴリーから探す</h3>
+            <a v-for="category in categories" :key="category.libcategory" >
+                <router-link :to="{ name: 'LibraryIndexPageFromCategory', params: { category: category.libcategory } }">{{ category.name }}
+                </router-link>
+            </a>
         </div>
     </div>
 </template>
@@ -21,12 +22,14 @@ import axios from 'axios';
 export default {
     data: function () {
         return {
-            cities: []
+            cities: [],
+            categories: []
         }
     },
     mounted () {
         this.showPopularCities();
-        this.showLibraries();
+        // this.showLibraries();
+        this.showCategories();
     },
     methods: {
         showPopularCities: function(){
@@ -34,11 +37,16 @@ export default {
                 .get('/api/v1/popularcities.json')
                 .then(response => (this.cities = response.data))
         },
-        showLibraries: function() {
+        // showLibraries: function() {
+        //     axios
+        //         .post(`/api/v1/libraries/${this.$route.params.name}.json`)
+        //         .then(response => (this.libraries = response.data))
+        // },
+        showCategories: function() {
             axios
-            .post(`/api/v1/libraries/${this.$route.params.name}.json`)
-            .then(response => (this.libraries = response.data))
-    }
+                .get('/api/v1/categories.json')
+                .then(response => (this.categories = response.data))
+        }
     }
 }
 
@@ -63,6 +71,8 @@ display: inline-block;
 border-radius: 5px;
 text-align: center;
 margin:auto 5px 0;
+padding: 1px 2px 1px 2px;
 }
+
 
 </style>

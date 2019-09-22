@@ -23,8 +23,13 @@
 # end
 
 # City data
-city_data = ActiveSupport::JSON.decode(File.read('cities.json'))
-city_data.each do |data|
-    City.create(id:data['id'], name:data['name'], pref_id:data['pref_id'])
-end
+# city_data = ActiveSupport::JSON.decode(File.read('cities.json'))
+# city_data.each do |data|
+#     City.create(id:data['id'], name:data['name'], pref_id:data['pref_id'])
+# end
 
+# Category data
+category_data = ActiveSupport::JSON.decode(File.read('categories.json'))
+category_data.each do |data|
+    Category.create(id:data['id'], name:data['name'], libcategory:data['libcategory'])
+end

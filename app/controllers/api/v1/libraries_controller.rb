@@ -8,17 +8,21 @@ class Api::V1::LibrariesController < ApiController
     
     def index
       # libraries = Library.all
-      libraries = Library.where(city: params[:city])
-      render json: libraries
+      # libraries = Library.where(city: params[:city])
+      # render json: libraries
     end
 
     def show
-      libraries = Library.where(city: params[:id])
+      if params[:category]
+        libraries = Library.where(category: params[:category])
+      else params[:city]
+        libraries = Library.where(city: params[:city])
+      end
       render json: libraries
     end
 
     def show_detail
-      libraries = Library.where(city: params[:name]).where(id: params[:id])
+      libraries = Library.where(id: params[:id])
       render json: libraries
     end
 

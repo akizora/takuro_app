@@ -1,0 +1,8 @@
+[
+    { "id": "1",  "name": "図書室・公民館",  "libcategory": "SMALL"}, 
+    { "id": "2",  "name": "図書館(地域)",  "libcategory": "MEDIUM"}, 
+    { "id": "3",  "name": "図書館(広域)",  "libcategory": "LARGE"}, 
+    { "id": "4",  "name": "大学",  "libcategory": "UNIV"}, 
+    { "id": "5",  "name": "専門",  "libcategory": "SPECIAL"}, 
+    { "id": "6",  "name": "移動・BM",  "libcategory": "BM"}
+]
