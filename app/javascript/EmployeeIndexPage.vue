@@ -51,9 +51,9 @@ export default {
       errors: ''
       }
     },
-    mounted () {
-      this.updateEmployees();
-    },
+  mounted () {
+    this.updateEmployees();
+  },
     methods: {
     deleteEmployee: function() {
       if (this.deleteTarget <= 0) {

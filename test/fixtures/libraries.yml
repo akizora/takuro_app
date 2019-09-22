@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  systemid: MyText
+  systemname: MyText
+  libkey: MyText
+  libid: MyText
+  short: MyText
+  formal: MyText
+  url_pc: MyText
+  address: MyText
+  pref: MyText
+  city: MyText
+  post: MyText
+  tel: MyText
+  geocode: MyText
+  category: MyText
+  image: MyText
+
+two:
+  systemid: MyText
+  systemname: MyText
+  libkey: MyText
+  libid: MyText
+  short: MyText
+  formal: MyText
+  url_pc: MyText
+  address: MyText
+  pref: MyText
+  city: MyText
+  post: MyText
+  tel: MyText
+  geocode: MyText
+  category: MyText
+  image: MyText
