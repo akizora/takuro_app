@@ -2,7 +2,7 @@
   <div class="container">
     <ol>
       <li v-for="(item, index) in items" :key=index>
-         <router-link v-bind:to=item.path>
+         <router-link v-bind:to="{name: item.name, path: item.path }">
             {{ item.title }}
          </router-link>
       </li>
@@ -20,7 +20,7 @@ export default {
         { title: 'Books', path: '/books' },
         { title: 'Libraries', path: '/libraries' },
         { title: 'Login', path: '/login' },
-        { title: 'About', path: '/about' }
+        { name: 'UserNewPage', title: 'Signup', path: '/signup' }
       ]
     }
   }

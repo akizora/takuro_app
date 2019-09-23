@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root to: 'home#index'
+  get 'users/new'
+  get 'sessions/new'
+  get '/signup',  to: 'users#new'
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # APIコントローラへのルーティング
@@ -8,7 +11,8 @@ Rails.application.routes.draw do
     post '/v1/libraries/city/:city', to: '/api/v1/libraries#show'
     get '/v1/libraries/:id', to: '/api/v1/libraries#show_detail'
     get '/v1/popularcities', to: '/api/v1/cities#show_popular_city' 
-      namespace :v1 do
+    namespace :v1 do
+        resources :users, only: [:index, :show, :create]
         resources :employees, only: [:index, :show, :create, :update, :destroy]
         resources :libraries, only: [:index, :show]
         resources :cities, only: [:index]

@@ -8,6 +8,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import UserNewPage from 'UserNewPage.vue'
+import UserDetailPage from 'UserDetailPage.vue'
+
 import EmployeeIndexPage from 'EmployeeIndexPage.vue'
 import EmployeeDetailPage from 'EmployeeDetailPage.vue'
 import EmployeeNewPage from 'EmployeeNewPage.vue'
@@ -36,6 +39,17 @@ const router = new VueRouter({
     { path: '/libraries/:id',
       name: 'LibraryDetailPage',
       component: LibraryDetailPage },
+
+
+    { path: '/users/new',
+      name: 'UserNewPage',
+      component: UserNewPage  },
+    { path: '/users/:id(\\d+)',
+      name: 'UserDetailPage',
+      component: UserDetailPage  },
+
+
+    // employees参考
     { path: '/employees/:id(\\d+)',  // :id は数値のみに制限する
       name: 'EmployeeDetailPage',  // ルートに名前を付けている ref. https://router.vuejs.org/ja/guide/essentials/named-routes.html#%E5%90%8D%E5%89%8D%E4%BB%98%E3%81%8D%E3%83%AB%E3%83%BC%E3%83%88
       component: EmployeeDetailPage  },
