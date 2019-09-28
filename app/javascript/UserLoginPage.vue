@@ -4,7 +4,7 @@
       <tab-menu></tab-menu>
     </div>
     <div>
-      <h1>Sign up</h1>
+      <h1>Login</h1>
       <user-form-pane :errors="errors" :user="user" @submit="createUser"></user-form-pane>
     </div>
   </div>

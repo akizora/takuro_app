@@ -19,7 +19,7 @@ export default {
         { title: 'Top', path: '/' },
         { title: 'Books', path: '/books' },
         { title: 'Libraries', path: '/libraries' },
-        { title: 'Login', path: '/login' },
+        { name: 'UserLoginPage', title: 'Login', path: '/login' },
         { name: 'UserNewPage', title: 'Signup', path: '/signup' }
       ]
     }

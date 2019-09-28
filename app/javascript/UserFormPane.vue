@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Sign up</h1>
     <form @submit.prevent="$emit('submit')">
       <div v-if="errors.length != 0">
         <ul v-for="e in errors" :key="e">

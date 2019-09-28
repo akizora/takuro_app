@@ -4,17 +4,14 @@
       <tab-menu></tab-menu>
     </div>
     <div class="inner">
-      <h1>Search</h1>
+      <h1>Rental Book Search</h1>
+      <h3>蔵書検索</h3>
       <div>
-        <h3>エリアから探す</h3>
+        <h3>キーワードで探す</h3>
         <a v-for="city in cities" :key="city.name" >
-            <router-link :to="{ name: 'LibraryIndexPageFromCity', params: { city: city.name } }">{{ city.name }}
-            </router-link>
         </a>
         <h3>カテゴリーから探す</h3>
         <a v-for="category in categories" :key="category.libcategory" >
-            <router-link :to="{ name: 'LibraryIndexPageFromCategory', params: { category: category.libcategory } }">{{ category.name }}
-            </router-link>
         </a>
       </div>
     </div>

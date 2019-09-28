@@ -8,6 +8,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import UserLoginPage from 'UserLoginPage.vue'
 import UserNewPage from 'UserNewPage.vue'
 import UserDetailPage from 'UserDetailPage.vue'
 
@@ -17,7 +18,10 @@ import EmployeeNewPage from 'EmployeeNewPage.vue'
 import EmployeeEditPage from 'EmployeeEditPage.vue'
 
 import LibraryIndexPage from 'LibraryIndexPage.vue'
+import LibrarySearchPage from 'LibrarySearchPage.vue'
 import LibraryDetailPage from 'LibraryDetailPage.vue'
+
+import BookSearchPage from 'BookSearchPage.vue'
 
 import index from 'index.vue'
 
@@ -27,9 +31,10 @@ const router = new VueRouter({
       component: index },
     { path: '/#/',
       component: index },
-    // { path: '/libraries/:name',
-    //   name: 'LibraryIndexPage',
-    //   component: LibraryIndexPage },
+
+    { path: '/libraries',
+      name: 'LibrarySearchPage',
+      component: LibrarySearchPage },
     { path: '/libraries/city/:city',
       name: 'LibraryIndexPageFromCity',
       component: LibraryIndexPage },
@@ -39,6 +44,15 @@ const router = new VueRouter({
     { path: '/libraries/:id',
       name: 'LibraryDetailPage',
       component: LibraryDetailPage },
+
+
+    { path: '/login',
+      name: 'UserLoginPage',
+      component: UserLoginPage  },
+
+    { path: '/books',
+      name: 'BookSearchPage',
+      component: BookSearchPage  },
 
 
     { path: '/users/new',
