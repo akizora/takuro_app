@@ -65,6 +65,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'activeadmin'
 gem 'mysql2'
 # gem 'bcrypt','3.1.12'
-
 # gem 'devise'
 # gem 'redis-rails'
+gem "rubyzip", ">= 1.3.0"
