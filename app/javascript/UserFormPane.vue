@@ -7,10 +7,10 @@
         </ul>
       </div>
       <!-- <div class="inner"> -->
-      <div>
+      <!-- <div>
         <label>name</label>
         <input v-model="user.name" type="text">
-      </div>
+      </div> -->
       <div>
         <label>email</label>
         <input v-model="user.email" type="email">

@@ -25,7 +25,7 @@ export default {
   data: function () {
     return {
       user: {
-        name: '',
+        // name: '',
         email: '',
         password: ''
         // gender: '',
