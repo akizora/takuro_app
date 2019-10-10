@@ -1,13 +1,12 @@
 <template>
     <div>
         <div class="container">
-            <h2>図書館検索</h2>
-            <h3>人気エリアから探す</h3>
+            <div class="search_by_area">人気エリアから探す</div>
             <a v-for="city in cities" :key="city.name" >
                 <router-link :to="{ name: 'LibraryIndexPageFromCity', params: { city: city.name } }">{{ city.name }}
                 </router-link>
             </a>
-            <h3>カテゴリーから探す</h3>
+            <div class="search_by_category">カテゴリーから探す</div>
             <a v-for="category in categories" :key="category.libcategory" >
                 <router-link :to="{ name: 'LibraryIndexPageFromCategory', params: { category: category.libcategory } }">{{ category.name }}
                 </router-link>
@@ -28,7 +27,6 @@ export default {
     },
     mounted () {
         this.showPopularCities();
-        // this.showLibraries();
         this.showCategories();
     },
     methods: {
@@ -37,11 +35,6 @@ export default {
                 .get('/api/v1/popularcities.json')
                 .then(response => (this.cities = response.data))
         },
-        // showLibraries: function() {
-        //     axios
-        //         .post(`/api/v1/libraries/${this.$route.params.name}.json`)
-        //         .then(response => (this.libraries = response.data))
-        // },
         showCategories: function() {
             axios
                 .get('/api/v1/categories.json')
@@ -54,24 +47,33 @@ export default {
 
 <style scoped>
 .container {
-  font-size: 80%;
-  text-align: center;
-  background: whitesmoke;
-  /* background: linear-gradient(270deg,#2f80ed,#56ccf2); */
-  overflow: hidden;
-  width: 100%;
-  height: 300px;
+    font-size: 80%;
+    text-align: center;
+    background: whitesmoke;
+    /* background: linear-gradient(270deg,#2f80ed,#56ccf2); */
+    overflow: hidden;
+    width: 100%;
+    height: 140px;
 }
-
+.search_by_area {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.search_by_category {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+}
 a {
-text-decoration: none;
-background: cornflowerblue;
-color: azure;
-display: inline-block;
-border-radius: 5px;
-text-align: center;
-margin:auto 5px 0;
-padding: 1px 2px 1px 2px;
+    text-decoration: none;
+    background: cornflowerblue;
+    color: azure;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    margin:auto 5px 0;
+    padding: 1px 2px 1px 2px;
 }
 
 

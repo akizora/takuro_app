@@ -1,13 +1,18 @@
 <template>
-  <div class="container">
-    <ol>
-      <li v-for="(item, index) in items" :key=index>
-         <router-link v-bind:to="{name: item.name, path: item.path }">
-            {{ item.title }}
-         </router-link>
-      </li>
-    </ol>
-  </div>
+  <header>
+    <div class="header_contents">
+    東京都の図書館が探せるサイト
+    </div>
+    <div class="container">
+      <ol>
+        <li v-for="(item, index) in items" :key=index>
+          <router-link v-bind:to="{name: item.name, path: item.path }">
+              {{ item.title }}
+          </router-link>
+        </li>
+      </ol>
+    </div>
+  </header>
 </template>
 
 <script>
@@ -16,11 +21,11 @@ export default {
   data () {
     return {
       items: [
-        { title: 'Top', path: '/' },
-        { title: 'Books', path: '/books' },
-        { title: 'Libraries', path: '/libraries' },
-        { name: 'UserLoginPage', title: 'Login', path: '/login' },
-        { name: 'UserNewPage', title: 'Signup', path: '/signup' }
+        { title: 'LibSearch', path: '/' },
+        // { title: 'Books', path: '/books' },
+        { title: '図書館を探す', path: '/libraries' },
+        { name: 'Login', title: 'はじめる', path: '/login' },
+        // { name: 'UserNewPage', title: 'Signup', path: '/signup' }
       ]
     }
   }
@@ -28,6 +33,11 @@ export default {
 </script>
 
 <style scoped>
+.header_contents {
+  padding: 3px;
+  background: #eae6dc;
+}
+
 .container {
   padding-top: 0px;
   display:inline;

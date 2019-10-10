@@ -1,40 +1,47 @@
 <template>
   <div class="container">
-    <h1> 東京都 図書館 & 蔵書 検索 </h1>
+    <div class="libserch_title">LibSearch</div>
+    <div class="libserch_sub_title">図書館に、出かけてみよう。</div>
   </div>
 </template>
+
+<script>
+</script>
+
 <style scoped>
 .container {
+  height: 500px;
+  width: 100%;
   font-size: 80%;
   text-align: center;
-  background: linear-gradient(270deg,#cad6ec,#56ccf2);
-  /* background: linear-gradient(270deg,#2f80ed,#56ccf2); */
   overflow: hidden;
-  width: 100%;
-  /* height: 788px; */
-  height: 420px;
+  /* background: linear-gradient(270deg,#cad6ec,#56ccf2); */
+  background-image:url("./images/top.jpg");
+  background-size: cover;
 }
+
 a {
-  color: azure;
+  color: black;
+  /* color: azure; */
 }
-h1 {
-  color: aliceblue;
+.libserch_title {
+  /* color: aliceblue; */
+  color: black;
+  font-size: 25px;
   letter-spacing: 3px;
   text-shadow:0 0 30px rgba(0,0,0,.2);
   text-align: center;
-  margin: 15% 0 0;
+  margin: 12% 0 0 0%;
 }
-/* h1:before {
-  position: absolute;
-  content: '';
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border: none;
-  border-left: solid 15px transparent;
-  border-bottom: solid 15px rgb(119, 195, 223);
-} */
+.libserch_sub_title {
+  /* color: aliceblue; */
+  color: black;
+  font-size: small;
+  letter-spacing: 3px;
+  text-shadow:0 0 30px rgba(0,0,0,.2);
+  text-align: center;
+  margin: 2% 0 0 0%;
+}
 * {
   margin: 0px;
   padding: 0px;
