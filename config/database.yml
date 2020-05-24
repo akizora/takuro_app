@@ -12,7 +12,7 @@ default: &default
   database: takuro_app
   pool: 5
   username: root
-  password:
+  password: root
   host: localhost
 
   timeout: 5000
@@ -23,7 +23,7 @@ development:
   database: takuro_app
   pool: 5
   username: root
-  password:
+  password: root
   host: localhost
   
   # <<: *default
