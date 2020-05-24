@@ -4,18 +4,44 @@
       <tab-menu></tab-menu>
     </div>
     <div class="inner">
-      <h1>Search</h1>
-      <div>
-        <h3>エリアから探す</h3>
-        <a v-for="city in cities" :key="city.name" >
-            <router-link :to="{ name: 'LibraryIndexPageFromCity', params: { city: city.name } }">{{ city.name }}
-            </router-link>
-        </a>
-        <h3>カテゴリーから探す</h3>
-        <a v-for="category in categories" :key="category.libcategory" >
-            <router-link :to="{ name: 'LibraryIndexPageFromCategory', params: { category: category.libcategory } }">{{ category.name }}
-            </router-link>
-        </a>
+      <div class="search_page_title">図書館検索</div>
+      <h3>キーワードから探す</h3>
+      <div class="search_card_keyword">
+        <div class="form_main">
+          <input 
+            v-model="text"
+            type="text"
+            class="input"
+            placeholder="キーワードで検索"
+            @keyup.enter="$emit('submit', text)"
+          >
+          <button 
+            class="button" 
+            @click="$emit('submit', text)"
+          />
+        </div>
+      </div>
+      <div class="search_card_area">
+        <h3>図書館のエリアから探す</h3>
+        <ul>
+          <li v-for="city in cities" :key="city.name" >
+            <a>
+              <router-link :to="{ name: 'LibraryIndexPageFromCity', params: { city: city.name } }">{{ city.name }}
+              </router-link>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="search_card_category">
+        <h3>図書館の種類から探す</h3>
+        <ul>
+          <li v-for="category in categories" :key="category.libcategory" >
+            <a>
+              <router-link :to="{ name: 'LibraryIndexPageFromCategory', params: { category: category.libcategory } }">{{ category.name }}
+              </router-link>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -23,24 +49,17 @@
 
 <script>
 import axios from 'axios';
-
 import TabMenu from 'TabMenu.vue'
-import Modal from 'Modal.vue'
 
 export default {
   components: {
-    Modal,
     TabMenu
   },
   data: function () {
     return {
       cities: [],
-      categories: []
-
-      // libraries: [],
-      // showModal: false,
-      // deleteTarget: -1,
-      // errors: ''
+      categories: [],
+      text: ''
       }
     },
     mounted () {
@@ -62,20 +81,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .inner {
   margin: auto;
+  width: 70%
+}
+.search_page_title {
+  margin-top: 25px;
 }
 
-h1 {
-  text-align: center;
-}
 h3 {
-  text-align: center;
-}
-p {
-  font-size: 2em;
-  text-align: center;
+  margin-top: 4px;
 }
 
 table{
@@ -107,4 +123,82 @@ table td{
   background-color: #eee;
   padding: 10px 0;
 }
+
+.search_card_keyword {
+  display: block;
+  height: 100px;
+  .form_main{
+    .input {
+      height: 20px;
+      width: 230px;
+      flex: 1;
+      border: 1px solid #dbdbdb;
+    }
+    .button {
+      width: 48px;
+      background-color: grey;
+      // background-image: url('~assets/images/search.png');
+      background-size: 18px 18px;
+      background-position: center center;
+      // border-radius: 0 8px 8px 0;
+      // color: $white;
+      cursor: pointer;
+    }
+  }
+}
+
+.search_card_area {
+  /* height: 300px; */
+  clear: both;
+  ul {
+    display: block;
+    list-style-type: disc;
+    width: 100%;
+    list-style: none;
+    // margin-block-start: 1em;
+    // margin-block-end: 1em;
+    // margin-inline-start: 0px;
+    // margin-inline-end: 0px;
+    // padding-inline-start: 40px;
+    :hover {
+      background-color:#dbdbdb;
+    }
+  }  
+  li {
+    width: 130px;
+    float: left;
+    // margin-top: 13px;
+    margin-top: 0px;
+    height: 35px;
+    cursor: pointer;
+    text-align: center;
+  }
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #3d3935;
+  }
+}
+
+.search_card_category {
+  clear: both;
+  ul {
+    display: block;
+    list-style-type: disc;
+    width: 100%;
+    list-style: none;
+  }
+  li {
+    width: 130px;
+    float: left;
+    margin-top: 13px;
+  }
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #3d3935;
+  }
+}
+
+
 </style>

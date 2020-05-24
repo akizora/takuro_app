@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   namespace :api, {format: 'json'} do
     post '/v1/libraries/category/:category', to: '/api/v1/libraries#show'
     post '/v1/libraries/city/:city', to: '/api/v1/libraries#show'
+  #  検索機能
+    get '/v1/libraries/', to: '/api/v1/libraries#search'
     get '/v1/libraries/:id', to: '/api/v1/libraries#show_detail'
     get '/v1/popularcities', to: '/api/v1/cities#show_popular_city' 
     get '/v1/cities', to: '/api/v1/cities#show' 

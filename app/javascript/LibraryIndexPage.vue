@@ -41,6 +41,23 @@ export default {
     Modal,
     TabMenu
   },
+  // 検索機能
+  async asyncData({ params, query }) {
+    const responseData = {
+      libraries: []
+    }
+    const keyword = query.keyword || ''
+    try {
+      const { data } = await axios.get('libraries', {
+        params: {
+          contents: keyword
+        }
+      })
+    } catch (e) {
+      console.log(e)
+    }
+    return responseData
+  },
   data: function () {
     return {
       libraries: [],
@@ -82,6 +99,17 @@ export default {
           .post(`/api/v1/libraries/category/${this.$route.params.category}.json`)
           .then(response => (this.libraries = response.data))
       }
+    },
+    // キーワード検索
+    onSubmitKeyword(text) {
+      axios 
+        .post(`/api/v1/libraries/city/${this.$route.params.city}.json`)
+
+
+      this.$router.push({
+        path: this.$route.path,
+        query: { ...this.$route.query, keyword: text }
+      })
     }
   }
 }
